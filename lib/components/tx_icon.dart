@@ -33,7 +33,9 @@ class TxIcon extends StatelessWidget {
         boxShadow: withShadow
             ? [
                 BoxShadow(
-                    offset: Offset.fromDirection(pi / 2, 2), blurRadius: 2)
+                    offset: Offset.fromDirection(pi / 2, 2),
+                    blurRadius: 2,
+                    color: const Color(0x66999999))
               ]
             : [],
       ),
