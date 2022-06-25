@@ -1,7 +1,5 @@
-import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:kaas/colors.dart';
-import 'package:kaas/components/circle.dart';
 import 'package:kaas/components/tx_icon.dart';
 
 import '../entities/drag_data.dart';
@@ -71,61 +69,21 @@ class TxItem extends StatelessWidget {
   build(BuildContext context) {
     double size = bordered ? 48 : 50;
 
-    Widget dragTarget = DragTarget(
-      builder: (BuildContext context, List<DragData?> candidates, rejected) {
-        return TxIcon(
-          size: size,
-          bgColor: backgroundColor,
-          iconColor: color,
-          icon: icon,
-        );
-      },
-      onWillAccept: (DragData? data) {
-        if (type == IconType.account) {
-          return (data?.type == IconType.incomeSource ||
-              data?.type == IconType.account);
-        }
-
-        if (type == IconType.expense) {
-          return data?.type == IconType.account;
-        }
-
-        return false;
-      },
+    var txIcon = TxIcon(
+      size: size,
+      bgColor: backgroundColor,
+      iconColor: color,
+      icon: icon,
+      draggable: draggable,
+      bordered: bordered,
+      type: type,
     );
-
-    Widget draggableContent = draggable
-        ? Draggable(
-            data: DragData(type: type),
-            childWhenDragging: const Circle(size: 50),
-            feedback: TxIcon(
-              size: size,
-              bgColor: backgroundColor,
-              iconColor: color,
-              shadowVisible: true,
-              icon: icon,
-            ),
-            child: dragTarget,
-          )
-        : dragTarget;
-
-    Widget borderedContent = bordered
-        ? DottedBorder(
-            borderType: BorderType.Circle,
-            color: const Color.fromRGBO(54, 54, 54, 0.47),
-            strokeWidth: 1,
-            strokeCap: StrokeCap.round,
-            padding: const EdgeInsets.all(1),
-            dashPattern: const [5, 5],
-            child: draggableContent,
-          )
-        : draggableContent;
 
     return SizedBox(
       width: 50,
       child: Column(
         children: [
-          borderedContent,
+          txIcon,
           const SizedBox(
             height: 6,
           ),
