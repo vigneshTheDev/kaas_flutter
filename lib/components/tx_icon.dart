@@ -8,7 +8,6 @@ import 'package:kaas/entities/drag_data.dart';
 class TxIcon extends StatelessWidget {
   final bool bordered;
   final bool draggable;
-  final double size;
   final Color iconColor;
   final Color bgColor;
   final IconData icon;
@@ -18,14 +17,14 @@ class TxIcon extends StatelessWidget {
     Key? key,
     required this.iconColor,
     required this.bgColor,
-    required this.size,
     required this.icon,
     required this.draggable,
     this.type = IconType.none,
     this.bordered = false,
   }) : super(key: key);
 
-  Widget buildCircle({bool withShadow = false}) {
+  Widget buildCircle(
+      {bool withShadow = false, required double size, double iconSize = 22}) {
     return Circle(
       size: size,
       color: bgColor,
@@ -42,6 +41,7 @@ class TxIcon extends StatelessWidget {
       child: Icon(
         icon,
         color: iconColor,
+        size: iconSize,
       ),
     );
   }
@@ -57,11 +57,11 @@ class TxIcon extends StatelessWidget {
                   border: Border.all(
                     color: bgColor,
                     style: BorderStyle.solid,
-                    width: 2,
+                    width: 3,
                   ),
                 ),
               )
-            : buildCircle();
+            : buildCircle(size: bordered ? 48 : 50);
       },
       onWillAccept: (DragData? data) {
         if (type == IconType.account) {
@@ -86,7 +86,7 @@ class TxIcon extends StatelessWidget {
         ? Draggable(
             data: DragData(type: type),
             childWhenDragging: const Circle(size: 50),
-            feedback: buildCircle(withShadow: true),
+            feedback: buildCircle(withShadow: true, size: 40, iconSize: 18),
             child: child,
           )
         : child;

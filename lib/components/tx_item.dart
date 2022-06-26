@@ -67,10 +67,7 @@ class TxItem extends StatelessWidget {
 
   @override
   build(BuildContext context) {
-    double size = bordered ? 48 : 50;
-
     var txIcon = TxIcon(
-      size: size,
       bgColor: backgroundColor,
       iconColor: color,
       icon: icon,
