@@ -77,7 +77,6 @@ class _HomeState extends State<Home> {
               'THIS MONTH',
               style: TextStyle(
                 fontSize: 12,
-                fontWeight: FontWeight.bold,
                 color: Color(0xff555555),
               ),
             ),
@@ -104,7 +103,18 @@ class _HomeState extends State<Home> {
                 ),
               ],
             ),
-          )
+          ),
+          const YSpace(24),
+          const XPadding(
+            child: Text(
+              'MONTHLY LIMIT',
+              style: TextStyle(
+                fontSize: 12,
+                color: Color(0xff555555),
+              ),
+            ),
+          ),
+          const YSpace(16),
         ],
       ),
     );

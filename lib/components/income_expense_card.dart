@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kaas/components/card.dart';
 
 class IncomeExpenseCard extends StatelessWidget {
   final String label;
@@ -15,11 +16,7 @@ class IncomeExpenseCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        color: const Color(0xFFF0F0F0),
-      ),
+    return KaasCard(
       child: Column(children: [
         const SizedBox(
           height: 34,
