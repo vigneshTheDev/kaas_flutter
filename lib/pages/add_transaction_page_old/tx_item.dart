@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kaas/colors.dart';
-import 'package:kaas/components/tx_icon.dart';
+import './tx_icon.dart';
 
-import '../entities/drag_data.dart';
+import 'drag_payload.dart';
 
 class TxItem extends StatelessWidget {
   final String title;

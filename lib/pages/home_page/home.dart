@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'package:kaas/colors.dart';
-import 'package:kaas/components/balance.dart';
-import 'package:kaas/components/bottom_navigation.dart';
-import 'package:kaas/components/x_space.dart';
-import 'package:kaas/components/y_space.dart';
-import 'package:kaas/components/income_expense_card.dart';
-import 'package:kaas/components/x_padding.dart';
+import 'package:kaas/shared_components/x_space.dart';
+import 'package:kaas/shared_components/y_space.dart';
+import 'package:kaas/shared_components/x_padding.dart';
+
+import 'components/balance.dart';
+import 'components/income_expense_card.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -114,7 +114,7 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-          const YSpace(16),
+          const YSpace(16)
         ],
       ),
     );

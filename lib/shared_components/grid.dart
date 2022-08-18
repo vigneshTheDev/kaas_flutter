@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/widgets.dart';
-import 'package:kaas/components/x_padding.dart';
+import 'package:kaas/shared_components/x_padding.dart';
 
 class Grid extends StatefulWidget {
   final int rows;

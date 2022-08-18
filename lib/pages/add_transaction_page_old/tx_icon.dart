@@ -2,8 +2,8 @@ import 'dart:math';
 
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
-import 'package:kaas/components/circle.dart';
-import 'package:kaas/entities/drag_data.dart';
+import 'package:kaas/shared_components/circle.dart';
+import 'drag_payload.dart';
 
 class TxIcon extends StatelessWidget {
   final bool bordered;
@@ -48,7 +48,7 @@ class TxIcon extends StatelessWidget {
 
   Widget buildDragTarget() {
     return DragTarget(
-      builder: (BuildContext context, List<DragData?> candidates, rejected) {
+      builder: (BuildContext context, List<DragPayload?> candidates, rejected) {
         return candidates.isNotEmpty
             ? Circle(
                 size: 50,
@@ -63,7 +63,7 @@ class TxIcon extends StatelessWidget {
               )
             : buildCircle(size: bordered ? 48 : 50);
       },
-      onWillAccept: (DragData? data) {
+      onWillAccept: (DragPayload? data) {
         if (type == IconType.account) {
           return (data?.type == IconType.incomeSource ||
               data?.type == IconType.account);
@@ -75,7 +75,7 @@ class TxIcon extends StatelessWidget {
 
         return false;
       },
-      onAccept: (DragData value) {
+      onAccept: (DragPayload value) {
         print('dropped: ${value.type}');
       },
     );
@@ -84,7 +84,7 @@ class TxIcon extends StatelessWidget {
   Widget buildDraggable(Widget child) {
     return draggable
         ? Draggable(
-            data: DragData(type: type),
+            data: DragPayload(type: type),
             childWhenDragging: const Circle(size: 50),
             feedback: buildCircle(withShadow: true, size: 40, iconSize: 18),
             child: child,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kaas/components/card.dart';
+import 'package:kaas/shared_components/card.dart';
 
 class IncomeExpenseCard extends StatelessWidget {
   final String label;

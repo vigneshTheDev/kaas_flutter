@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:kaas/components/simple_app_bar.dart';
+import 'package:kaas/shared_components/simple_app_bar.dart';
 
 class QuickActionsPage extends StatefulWidget {
   const QuickActionsPage({Key? key}) : super(key: key);

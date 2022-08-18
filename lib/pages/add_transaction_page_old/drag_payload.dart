@@ -1,6 +1,6 @@
 enum IconType { incomeSource, account, expense, none }
 
-class DragData {
+class DragPayload {
   final IconType type;
-  const DragData({required this.type});
+  const DragPayload({required this.type});
 }

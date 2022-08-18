@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-import 'package:kaas/components/tx_item.dart';
-import 'package:kaas/components/grid.dart';
-import 'package:kaas/components/simple_app_bar.dart';
-import 'package:kaas/components/x_padding.dart';
+import 'package:kaas/shared_components/grid.dart';
+import 'package:kaas/shared_components/simple_app_bar.dart';
+import 'package:kaas/shared_components/x_padding.dart';
+import './tx_item.dart';
 
-class AddTransactionPage extends StatefulWidget {
-  const AddTransactionPage({Key? key}) : super(key: key);
+class AddTransactionPageOld extends StatefulWidget {
+  const AddTransactionPageOld({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _AddTransactionPageState();
+  State<StatefulWidget> createState() => _AddTransactionPageOldState();
 }
 
-class _AddTransactionPageState extends State<AddTransactionPage> {
+class _AddTransactionPageOldState extends State<AddTransactionPageOld> {
   Offset? position;
 
   @override

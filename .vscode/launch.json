@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "kaas",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "kaas (profile mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "kaas (release mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "Flutter (Pixel_3a_API_32_arm64-v8a)",
+      "program": "lib/main.dart",
+      "deviceId": "emulator-5554",
+      "request": "launch",
+      "type": "dart"
+    }
+  ]
+}
