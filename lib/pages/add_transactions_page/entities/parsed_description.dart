@@ -8,10 +8,21 @@ class ParsedDescription {
 
   final NumberFormat _formatter = NumberFormat.compactSimpleCurrency();
 
+  ParsedDescription({this.description = ''}) {
+    _parseDescription();
+  }
+
   updateDescription(String desc) {
     description = desc;
+    _parseDescription();
+  }
+
+  _parseDescription() {
+    final desc = description;
+
     amount = _getAmount(desc);
     amountFormatted = _formatter.format(amount);
+
     final trimmed = _trimDescription(desc);
     segments = _getSegments(trimmed);
   }

@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:kaas/firestore/account_doc.dart';
+import 'package:kaas/utils/future_data.dart';
 
 class AccountRepo {
   const AccountRepo();
@@ -35,7 +36,6 @@ class AccountRepo {
 
     final docSnap = await accountCollectionRef.get();
     final accounts = docSnap.docs.map((e) => e.data()).toList();
-    print(accounts);
     return accounts;
   }
 

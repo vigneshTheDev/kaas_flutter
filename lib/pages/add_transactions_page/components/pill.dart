@@ -14,16 +14,20 @@ class Pill extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    const grey = Color(0xFFDBDBDB);
+    return InkWell(
+      splashColor: yellowLight,
+      borderRadius: BorderRadius.circular(14),
       onTap: () {
         onTap();
       },
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 12),
         decoration: BoxDecoration(
-          color: selected ? yellowLight : const Color(0xFFDBDBDB),
-          borderRadius: BorderRadius.circular(14),
-        ),
+            color: selected ? yellowLight.withAlpha(150) : grey,
+            borderRadius: BorderRadius.circular(14),
+            border:
+                Border.all(color: selected ? yellowText.withAlpha(150) : grey)),
         child: Text(
           text,
           style: TextStyle(
