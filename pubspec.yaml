@@ -35,11 +35,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   dotted_border: ^2.0.0+2
   google_fonts: ^3.0.1
-  firebase_core: ^1.20.0
-  cloud_firestore: ^3.4.2
+  firebase_core: ^2.11.0
+  cloud_firestore: ^4.6.0
   json_annotation: ^4.6.0
-  google_sign_in: ^5.4.0
-  firebase_auth: ^3.5.0
+  google_sign_in: ^6.1.0
+  firebase_auth: ^4.2.2
   intl: ^0.17.0
   typesense: ^0.2.0
   http: ^0.13.5
